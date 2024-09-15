@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import CardImage from "./CardImage";
 import CardInfo from "./CardInfo";
 
-function Card() {
+function Card( item ) {
   return (
     <Link
       to="./detail"
@@ -12,7 +12,7 @@ function Card() {
         <CardImage />
       </div>
       <div className="w-full h-[40%]">
-        <CardInfo />
+        <CardInfo item={item} />
       </div>
     </Link>
   );

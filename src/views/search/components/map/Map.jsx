@@ -1,39 +1,61 @@
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import useMarkerStore from "../../../../stores/markerStore";
+import MarkerClusterGroup from "react-leaflet-cluster";
+import Card from "../../../../components/Card/Card";
+import MapFunctions from './MapFunctions'; // Asegúrate de tener este import correctamente definido
+import { useEffect } from "react";
+import { debounce } from "lodash";
 
-function Map({ latitude, longitude }) {
+const center = [-34.60371, -58.38156];
+const zoom = 13;
+
+function Map() {
+  const { markers } = useMarkerStore(); // Extrae correctamente los markers del store
+
+  // Agregar logs útiles para depuración
+  useEffect(() => {
+    console.log("Total markers in store:", markers?.length || 0);
+  }, [markers]);
+
   return (
     <div className="w-full h-full flex items-center justify-center">
-      {latitude && longitude ? (
-        <MapContainer
-          center={[latitude, longitude]}
-          zoom={13}
-          scrollWheelZoom={false}
-          style={{ height: "100%", width: "100%", zIndex: 94 }}
-        >
-          <TileLayer
-            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          />
-          <Marker position={[latitude, longitude]}>
-            <Popup>Ubicación</Popup>
-          </Marker>
-          <Marker position={[latitude, "153.2093"]}>
-            <Popup>Ubicación</Popup>
-          </Marker>
-          <Marker position={[latitude, "141.2093"]}>
-            <Popup>Ubicación</Popup>
-          </Marker>
-          <Marker position={[latitude, "121.2093"]}>
-            <Popup>Ubicación</Popup>
-          </Marker>
-        </MapContainer>
-      ) : (
-        <div className="h-96 w-full border border-gray-400 flex items-center justify-center bg-orange-100 flex-col">
-          <p className="mt-8 text-xs font-fantasy text-orange-400">
-            Marca "Location" para el mapa.
-          </p>
-        </div>
-      )}
+      <MapContainer
+        center={center}
+        zoom={zoom}
+        scrollWheelZoom={true}
+        style={{ height: "100%", width: "100%", zIndex: 94 }}
+      >
+        <TileLayer
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        />
+
+        {/* Componente que maneja el movimiento y filtrado */}
+        <MapFunctions />
+
+        {/* MarkerClusterGroup con chunkedLoading para mejorar el rendimiento */}
+        <MarkerClusterGroup chunkedLoading>
+          {markers?.length > 0 ? (
+            markers.map((spot, index) => (
+              <Marker
+                key={index}
+                position={[spot.latitude, spot.longitude]}
+                title={spot.name}
+                eventHandlers={{
+                  click: () => console.log(`Clicked on marker: ${spot.name} (${spot.latitude}, ${spot.longitude})`),
+                }}
+              >
+                <Popup>
+                  {/* Usando un componente de tarjeta para mostrar los detalles */}
+                  <Card item={spot} />
+                </Popup>
+              </Marker>
+            ))
+          ) : (
+            null // Puedes mostrar un mensaje o loading si prefieres
+          )}
+        </MarkerClusterGroup>
+      </MapContainer>
     </div>
   );
 }

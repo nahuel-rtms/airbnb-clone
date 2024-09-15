@@ -1,5 +1,4 @@
 import Carousel from "./components/Carousel";
-import Map from "./components/Map";
 import Contact from "./components/Contact";
 import Info from "./components/Info";
 

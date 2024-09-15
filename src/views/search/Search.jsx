@@ -14,8 +14,7 @@ function Search() {
           <option disabled selected>
             Dormitorios y baños
           </option>
-          <option>Han Solo</option>
-          <option>Greedo</option>
+          <option>No disponible con este dataset</option>
         </select>
         <select className="select select-bordered w-full max-w-xs">
           <option disabled selected>
@@ -27,13 +26,6 @@ function Search() {
         <select className="select select-bordered w-full max-w-xs">
           <option disabled selected>
             Tipo de propiedad
-          </option>
-          <option>Han Solo</option>
-          <option>Greedo</option>
-        </select>
-        <select className="select select-bordered w-full max-w-xs">
-          <option disabled selected>
-            Mas filtros
           </option>
           <option>Han Solo</option>
           <option>Greedo</option>

@@ -1,5 +1,5 @@
 import { Bathtub, Campfire, PawPrint, Wheelchair } from "@phosphor-icons/react";
-import Map from "./Map";
+import DetailMap from "./detailMap/DetailMap";
 
 function Info() {
   return (
@@ -14,7 +14,7 @@ function Info() {
         </div>
       </div>
       <div className="h-96 rounded-lg overflow-hidden">
-        <Map latitude={"123.2093"} longitude={"133.2093"} />
+        <DetailMap latitude={"123.2093"} longitude={"133.2093"} />
       </div>
       <div className="space-y-5">
         <p className="text-xl font-bold">Descripcion</p>
