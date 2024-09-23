@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import NavBar from "./components/NavBar";
 import useDatasetStore from "./stores/datasetStore";
 import { useEffect } from "react";
+import NavBar from "./layouts/NavBar";
 
 function App() {
   const { fetchDataset, isLoading, error } = useDatasetStore();

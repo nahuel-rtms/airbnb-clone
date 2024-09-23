@@ -1,6 +1,6 @@
 import imgage from "../../assets/house.jpg";
 
-function CardImage() {
+function PropertyCardImage() {
   return (
     <div className="relative overflow-hidden h-full">
       <svg
@@ -26,4 +26,4 @@ function CardImage() {
   );
 }
 
-export default CardImage;
+export default PropertyCardImage;

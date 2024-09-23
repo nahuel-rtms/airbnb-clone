@@ -2,11 +2,12 @@ import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./views/Home.jsx";
 import ErrorPage from "./views/ErrorPage.jsx";
-import Home from "./views/home/Home.jsx";
-import Search from "./views/search/Search.jsx";
-import Detail from "./views/detail/Detail.jsx";
+import Properties from "./views/Properties.jsx";
+import PropertyDetail from "./views/PropertyDetail.jsx";
 import ComingSoon from "./views/ComingSoon.jsx";
+
 
 const router = createBrowserRouter([
   {
@@ -20,13 +21,13 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />,
       },
       {
-        path: "/search",
-        element: <Search />,
+        path: "/properties",
+        element: <Properties />,
         errorElement: <ErrorPage />,
       },
       {
-        path: "/detail",
-        element: <Detail />,
+        path: "/propertydetail",
+        element: <PropertyDetail />,
         errorElement: <ErrorPage />,
       },
       {

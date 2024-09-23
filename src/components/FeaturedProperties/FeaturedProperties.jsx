@@ -1,6 +1,6 @@
-import Card from "../../../../components/Card/Card";
 
-function Featured() {
+
+function FeaturedProperties() {
   return (
     <div className="w-full h-fit py-10 px-28 grid grid-cols-4 gap-3">
       {/* <Card />
@@ -11,4 +11,4 @@ function Featured() {
   );
 }
 
-export default Featured;
+export default FeaturedProperties;

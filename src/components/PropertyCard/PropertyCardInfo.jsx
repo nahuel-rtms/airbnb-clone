@@ -1,6 +1,6 @@
 import { Bathtub, Bed, Cube } from "@phosphor-icons/react";
 
-function CardInfo( item ) {
+function PropertyCardInfo( item ) {
 
   // console.log(item)
 
@@ -34,4 +34,4 @@ function CardInfo( item ) {
   );
 }
 
-export default CardInfo;
+export default PropertyCardInfo;

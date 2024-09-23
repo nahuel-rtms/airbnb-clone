@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Card from "../../../../components/Card/Card";
-import useMarkerStore from "../../../../stores/markerStore";
+import PropertyCard from "../PropertyCard/PropertyCard";
+import useMarkerStore from "../../stores/markerStore";
 
-function List() {
+function PropertyList() {
 
 const { markers } = useMarkerStore()
 const [ displayItems, setDisplayItems ] = useState(null)
@@ -29,11 +29,11 @@ useEffect(() => {
       </div>
       <div className="w-full h-[85%] grid grid-cols-2 gap-2 p-5 overflow-scroll no-scrollbar">
         {displayItems?.length > 0 ? displayItems.map((item, index) => (
-          <Card key={index} item={item} />
+          <PropertyCard key={index} item={item} />
         )) : <p>Move the map</p>}
       </div>
     </div>
   );
 }
 
-export default List;
+export default PropertyList;

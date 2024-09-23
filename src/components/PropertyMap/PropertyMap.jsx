@@ -1,15 +1,15 @@
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
-import useMarkerStore from "../../../../stores/markerStore";
 import MarkerClusterGroup from "react-leaflet-cluster";
-import Card from "../../../../components/Card/Card";
 import MapFunctions from './MapFunctions'; // Asegúrate de tener este import correctamente definido
 import { useEffect } from "react";
 import { debounce } from "lodash";
+import useMarkerStore from "../../stores/markerStore";
+import PropertyCard from "../PropertyCard/PropertyCard";
 
 const center = [-34.60371, -58.38156];
 const zoom = 13;
 
-function Map() {
+function PropertyMap() {
   const { markers } = useMarkerStore(); // Extrae correctamente los markers del store
 
   // Agregar logs útiles para depuración
@@ -47,7 +47,7 @@ function Map() {
               >
                 <Popup>
                   {/* Usando un componente de tarjeta para mostrar los detalles */}
-                  <Card item={spot} />
+                  <PropertyCard item={spot} />
                 </Popup>
               </Marker>
             ))
@@ -60,4 +60,4 @@ function Map() {
   );
 }
 
-export default Map;
+export default PropertyMap;

@@ -13,7 +13,7 @@ function NavBar() {
         <Link to="./comingsoon" className="btn btn-ghost font-medium">
           Inmobiliarias
         </Link>
-        <Link to="./search" className="btn btn-ghost font-medium">
+        <Link to="./properties" className="btn btn-ghost font-medium">
           Ver propiedades
         </Link>
         <Link to="./comingsoon" className="btn btn-ghost font-medium">

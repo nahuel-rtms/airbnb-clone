@@ -1,6 +1,6 @@
-import postimg from "../../../../assets/blog.jpg";
+import postimg from "../../assets/blog.jpg";
 
-function PostCard() {
+function BlogPost() {
   return (
     <div className="h-80 w-full bg-base-100 shadow-md rounded-md overflow-hidden">
       <div className="h-[50%] w-full overflow-hidden">
@@ -19,4 +19,4 @@ function PostCard() {
   );
 }
 
-export default PostCard;
+export default BlogPost;

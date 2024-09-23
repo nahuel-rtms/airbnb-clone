@@ -1,7 +1,8 @@
-import Footer from "../../components/Footer";
-import Featured from "./components/featured/Featured";
-import FeaturedBlogPost from "./components/featuredBlogPost/FeaturedBlogPost";
-import Hero from "./components/Hero";
+import FeaturedBlogPost from "../components/BlogPost/BlogPostContainer";
+import FeaturedProperties from "../components/FeaturedProperties/FeaturedProperties";
+import Hero from "../components/Hero/Hero";
+import Footer from "../layouts/Footer";
+
 
 function Home() {
   return (
@@ -10,7 +11,7 @@ function Home() {
         <div className="w-full h-[91vh] bg-slate-500 mb-8">
           <Hero />
         </div>
-        <Featured />
+        <FeaturedProperties />
         <FeaturedBlogPost />
       </div>
       <Footer />

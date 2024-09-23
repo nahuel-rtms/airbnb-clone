@@ -1,6 +1,6 @@
 import { BuildingOffice, DeviceMobile } from "@phosphor-icons/react";
 
-function Contact() {
+function ContactForm() {
   return (
     <div className="sticky top-0 w-1/4 h-fit bg-base-100 rounded-lg p-6 py-10 flex flex-col items-center justify-center space-y-5">
       <div className="avatar">
@@ -46,4 +46,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default ContactForm;

@@ -1,21 +1,21 @@
 import { Link } from "react-router-dom";
-import CardImage from "./CardImage";
-import CardInfo from "./CardInfo";
+import PropertyCardImage from "./PropertyCardImage";
+import PropertyCardInfo from "./PropertyCardInfo";
 
-function Card( item ) {
+function PropertyCard( item ) {
   return (
     <Link
-      to="./detail"
+      to="./propertydetail"
       className="h-96 w-full bg-base-100 shadow-md rounded-md overflow-hidden"
     >
       <div className="w-full h-[60%]">
-        <CardImage />
+        <PropertyCardImage />
       </div>
       <div className="w-full h-[40%]">
-        <CardInfo item={item} />
+        <PropertyCardInfo item={item} />
       </div>
     </Link>
   );
 }
 
-export default Card;
+export default PropertyCard;

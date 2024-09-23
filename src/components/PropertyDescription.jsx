@@ -1,7 +1,6 @@
 import { Bathtub, Campfire, PawPrint, Wheelchair } from "@phosphor-icons/react";
-import DetailMap from "./detailMap/DetailMap";
 
-function Info() {
+function PropertyDescription() {
   return (
     <div className="flex-1 space-y-32 pb-48 pr-2">
       <div className="flex flex-col">
@@ -14,7 +13,7 @@ function Info() {
         </div>
       </div>
       <div className="h-96 rounded-lg overflow-hidden">
-        <DetailMap latitude={"123.2093"} longitude={"133.2093"} />
+        {/* <DetailMap latitude={"123.2093"} longitude={"133.2093"} /> */}
       </div>
       <div className="space-y-5">
         <p className="text-xl font-bold">Descripcion</p>
@@ -62,4 +61,4 @@ function Info() {
   );
 }
 
-export default Info;
+export default PropertyDescription;

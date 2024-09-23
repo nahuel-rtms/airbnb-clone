@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Stats from "./Stats";
-import heroimg from "../../../assets/hero.jpg";
+import heroimg from "../../assets/hero.jpg";
 
 function Hero() {
   const [transform, setTransform] = useState("");

@@ -1,7 +1,8 @@
-import List from "./components/listing/List";
-import Map from "./components/map/Map";
+import PropertyList from "../components/PropertyList/PropertyList";
+import PropertyMap from "../components/PropertyMap/PropertyMap";
 
-function Search() {
+
+function Properties() {
   return (
     <div className="w-full h-full">
       <div className="flex h-[10%] w-full space-x-5 bg-base-100 items-center px-10">
@@ -34,14 +35,14 @@ function Search() {
       </div>
       <div className="w-full h-[90%] flex">
         <div className="h-full w-[52%] bg-base-200">
-          <Map latitude={"-33.8688"} longitude={"151.2093"} />
+          <PropertyMap latitude={"-33.8688"} longitude={"151.2093"} />
         </div>
         <div className="h-full w-[48%]">
-          <List />
+          <PropertyList />
         </div>
       </div>
     </div>
   );
 }
 
-export default Search;
+export default Properties;

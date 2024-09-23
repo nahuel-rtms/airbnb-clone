@@ -1,8 +1,8 @@
 import { debounce } from "lodash";
 import { useEffect, useState, useCallback } from "react";
 import { useMap } from "react-leaflet"; // Asumiendo que usas React-Leaflet
-import useDatasetStore from "../../../../stores/datasetStore";
-import useMarkerStore from "../../../../stores/markerStore";
+import useDatasetStore from "../../stores/datasetStore";
+import useMarkerStore from "../../stores/markerStore";
 
 // Corrigiendo el parámetro list
 function sliceByKm(km, list) {
