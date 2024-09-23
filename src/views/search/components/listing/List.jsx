@@ -30,7 +30,7 @@ useEffect(() => {
       <div className="w-full h-[85%] grid grid-cols-2 gap-2 p-5 overflow-scroll no-scrollbar">
         {displayItems?.length > 0 ? displayItems.map((item, index) => (
           <Card key={index} item={item} />
-        )) : <p>Dont know what happend, sorry :P </p>}
+        )) : <p>Move the map</p>}
       </div>
     </div>
   );
