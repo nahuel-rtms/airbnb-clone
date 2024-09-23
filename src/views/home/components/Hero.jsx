@@ -33,10 +33,10 @@ function Hero() {
       <img
         src={heroimg}
         alt="hero-img"
-        className="w-full brightness-50 transition-transform duration-300 ease-out"
+        className="w-full brightness-90 transition-transform duration-300 ease-out"
         style={{ transform }}
       />
-      <div className="absolute flex flex-col items-center justify-center space-y-3">
+      <div className="absolute flex flex-col items-center text-white drop-shadow-2xl justify-center space-y-3">
         <p className="text-5xl font-bold">Discover Your New Home</p>
         <p className="text-xl font-medium">
           Helping 100 million renters find their perfect fit.
