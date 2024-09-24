@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
 import PropertyCard from "../PropertyCard/PropertyCard";
-import useMarkerStore from "../../stores/markerStore";
+import useListingStore from "../../stores/listingStore";
 
 function PropertyList() {
 
-const { markers } = useMarkerStore()
+const { list } = useListingStore()
 const [ displayItems, setDisplayItems ] = useState(null)
 const [ end, setEnd ] = useState(10)
 
 useEffect(() => {
-  if (markers) {
-    const result = markers.slice(0, end);
+  if (list) {
+    const result = list.slice(0, end);
     setDisplayItems(result);
     // console.log(dis)
   }
-}, [end, markers])
+}, [end, list])
 
 // useEffect(() => {
 //     const result = end + 10

@@ -1,25 +1,47 @@
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
-import MapFunctions from './MapFunctions'; // Asegúrate de tener este import correctamente definido
-import { useEffect } from "react";
-import { debounce } from "lodash";
-import useMarkerStore from "../../stores/markerStore";
+import MapFunctions from './MapFunctions';
+import { useEffect, useMemo } from "react";
 import PropertyCard from "../PropertyCard/PropertyCard";
+import useListingStore from "../../stores/listingStore";
+import useDatasetStore from "../../stores/datasetStore";
 
 const center = [-34.60371, -58.38156];
 const zoom = 13;
 
 function PropertyMap() {
-  const { markers } = useMarkerStore(); // Extrae correctamente los markers del store
+  const { list } = useListingStore();
+  const { dataset } = useDatasetStore();
 
-  // Agregar logs útiles para depuración
+  const datasetLength = dataset.length
+  const sliced = dataset.slice(0, datasetLength / 4)
+
   useEffect(() => {
-    console.log("Total markers in store:", markers?.length || 0);
-  }, [markers]);
+    console.log("Total properties in store:", list?.length || 0);
+  }, [list]);
+
+  const markers = useMemo(() => {
+    return sliced?.map((spot, index) => (
+      <Marker
+        key={index}
+        position={[spot.latitude, spot.longitude]}
+        title={spot.name}
+        eventHandlers={{
+          click: () => console.log(`Clicked on marker: ${spot.name} (${spot.latitude}, ${spot.longitude})`),
+        }}
+      >
+        <Popup>
+          <PropertyCard item={spot} />
+        </Popup>
+      </Marker>
+    ));
+  }, []);
 
   return (
+
     <div className="w-full h-full flex items-center justify-center">
       <MapContainer
+        preferCanvas={true}
         center={center}
         zoom={zoom}
         scrollWheelZoom={true}
@@ -29,31 +51,9 @@ function PropertyMap() {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-
-        {/* Componente que maneja el movimiento y filtrado */}
         <MapFunctions />
-
-        {/* MarkerClusterGroup con chunkedLoading para mejorar el rendimiento */}
         <MarkerClusterGroup chunkedLoading>
-          {markers?.length > 0 ? (
-            markers.map((spot, index) => (
-              <Marker
-                key={index}
-                position={[spot.latitude, spot.longitude]}
-                title={spot.name}
-                eventHandlers={{
-                  click: () => console.log(`Clicked on marker: ${spot.name} (${spot.latitude}, ${spot.longitude})`),
-                }}
-              >
-                <Popup>
-                  {/* Usando un componente de tarjeta para mostrar los detalles */}
-                  <PropertyCard item={spot} />
-                </Popup>
-              </Marker>
-            ))
-          ) : (
-            null // Puedes mostrar un mensaje o loading si prefieres
-          )}
+          {markers}
         </MarkerClusterGroup>
       </MapContainer>
     </div>

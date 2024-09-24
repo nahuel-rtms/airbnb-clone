@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 import useDatasetStore from "./stores/datasetStore";
-import { useEffect } from "react";
+import { StrictMode, useEffect } from "react";
 import NavBar from "./layouts/NavBar";
 
 function App() {
@@ -19,12 +19,14 @@ function App() {
   }
 
   return (
-    <div className="h-screen w-screen no-scrollbar bg-base-300">
-      <NavBar />
-      <div className="h-[91vh] w-screen">
-        <Outlet />
+    <StrictMode>
+      <div className="h-screen w-screen no-scrollbar bg-base-300">
+        <NavBar />
+        <div className="h-[91vh] w-screen">
+          <Outlet />
+        </div>
       </div>
-    </div>
+    </StrictMode>
   );
 }
 
