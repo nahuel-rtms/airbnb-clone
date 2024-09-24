@@ -1,44 +1,44 @@
 import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import MapFunctions from './MapFunctions';
-import { useEffect, useMemo } from "react";
+import { useMemo, useState } from "react";
 import PropertyCard from "../PropertyCard/PropertyCard";
-import useListingStore from "../../stores/listingStore";
 import useDatasetStore from "../../stores/datasetStore";
+import LoadingSpinner from "../LoadingSpinner";
 
 const center = [-34.60371, -58.38156];
 const zoom = 13;
 
 function PropertyMap() {
-  const { list } = useListingStore();
-  const { dataset } = useDatasetStore();
+  const { dataset, isLoading } = useDatasetStore();
+  const [sliced, setSliced] = useState([]); // Mueve el useState fuera del useMemo
 
-  const datasetLength = dataset.length
-  const sliced = dataset.slice(0, datasetLength / 4)
+  // Actualiza el estado cuando el dataset cambia
+  useMemo(() => {
+    if (dataset) {
+      const datasetLength = dataset.length;
+      const result = dataset.slice(0, datasetLength / 4);
+      setSliced(result);
+    }
+  }, [dataset]);
 
-  useEffect(() => {
-    console.log("Total properties in store:", list?.length || 0);
-  }, [list]);
-
-  const markers = useMemo(() => {
-    return sliced?.map((spot, index) => (
-      <Marker
-        key={index}
-        position={[spot.latitude, spot.longitude]}
-        title={spot.name}
-        eventHandlers={{
-          click: () => console.log(`Clicked on marker: ${spot.name} (${spot.latitude}, ${spot.longitude})`),
-        }}
-      >
-        <Popup>
-          <PropertyCard item={spot} />
-        </Popup>
-      </Marker>
-    ));
-  }, []);
+  // Genera los markers basados en el estado 'sliced'
+  const markers = sliced.map((spot, index) => (
+    <Marker
+      key={index}
+      position={[spot.latitude, spot.longitude]}
+      title={spot.name}
+      eventHandlers={{
+        click: () => console.log(`Clicked on marker: ${spot.name} (${spot.latitude}, ${spot.longitude})`),
+      }}
+    >
+      <Popup>
+        <PropertyCard item={spot} />
+      </Popup>
+    </Marker>
+  ));
 
   return (
-
     <div className="w-full h-full flex items-center justify-center">
       <MapContainer
         preferCanvas={true}
@@ -52,9 +52,10 @@ function PropertyMap() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <MapFunctions />
-        <MarkerClusterGroup chunkedLoading>
-          {markers}
-        </MarkerClusterGroup>
+        {isLoading ? <LoadingSpinner /> :
+          <MarkerClusterGroup chunkedLoading>
+            {markers}
+          </MarkerClusterGroup>}
       </MapContainer>
     </div>
   );

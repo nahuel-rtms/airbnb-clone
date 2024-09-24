@@ -1,8 +1,12 @@
+import { lazy, Suspense } from "react";
 import PropertyList from "../components/PropertyList/PropertyList";
-import PropertyMap from "../components/PropertyMap/PropertyMap";
+import LoadingSpinner from "../components/LoadingSpinner";
 
 
 function Properties() {
+
+const Map = lazy(() => import("../components/PropertyMap/PropertyMap"))
+
   return (
     <div className="w-full h-full">
       <div className="flex h-[10%] w-full space-x-5 bg-base-100 items-center px-10">
@@ -35,7 +39,9 @@ function Properties() {
       </div>
       <div className="w-full h-[90%] flex">
         <div className="h-full w-[52%] bg-base-200">
-          <PropertyMap latitude={"-33.8688"} longitude={"151.2093"} />
+          <Suspense fallback={<LoadingSpinner /> }>
+            <Map latitude={"-33.8688"} longitude={"151.2093"} />
+          </Suspense>
         </div>
         <div className="h-full w-[48%]">
           <PropertyList />

@@ -4,19 +4,11 @@ import { StrictMode, useEffect } from "react";
 import NavBar from "./layouts/NavBar";
 
 function App() {
-  const { fetchDataset, isLoading, error } = useDatasetStore();
+  const { fetchDataset } = useDatasetStore();
 
   useEffect(() => {
     fetchDataset();
   }, [fetchDataset]);
-
-  if (isLoading) {
-    return <p>Loading dataset...</p>;
-  }
-
-  if (error) {
-    return <p>Error: {error}</p>;
-  }
 
   return (
     <StrictMode>
