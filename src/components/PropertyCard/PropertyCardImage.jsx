@@ -1,6 +1,4 @@
-import imgage from "../../assets/house.jpg";
-
-function PropertyCardImage() {
+function PropertyCardImage(image) {
   return (
     <div className="relative overflow-hidden h-full">
       <svg
@@ -19,8 +17,8 @@ function PropertyCardImage() {
       </svg>
 
       <img
-        src={imgage}
-        className="absolute inset-0 h-full w-auto object-cover"
+        src={image.image}
+        className="absolute inset-0 h-full w-full object-cover"
       />
     </div>
   );

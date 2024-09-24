@@ -7,7 +7,7 @@ function ErrorPage() {
       <div className="w-full h-[91vh] flex items-center justify-center">
         <div>
           <p className="font-bold text-xl">
-            Error al solicitar la ruta indicada
+            Error requesting the specified route
           </p>
         </div>
       </div>

@@ -3,6 +3,14 @@ import PropertyCard from "../PropertyCard/PropertyCard";
 import useListingStore from "../../stores/listingStore";
 import useDatasetStore from "../../stores/datasetStore";
 import LoadingSpinner from "../LoadingSpinner";
+import img1 from "../../assets/propertyImages/image1.jpg"
+import img2 from "../../assets/propertyImages/image2.jpg"
+import img3 from "../../assets/propertyImages/image3.jpg"
+import img4 from "../../assets/propertyImages/image4.jpg"
+import img5 from "../../assets/propertyImages/image5.jpg"
+import img6 from "../../assets/propertyImages/image6.jpg"
+
+const images = [img1, img2, img3, img4, img5, img6]
 
 function PropertyList() {
 
@@ -33,12 +41,16 @@ function PropertyList() {
       </div>
       {isLoading ?
         <div className="w-full h-[85%]">
+          
           <LoadingSpinner />
         </div> :
         <div className="w-full h-[85%] grid grid-cols-2 gap-2 p-5 overflow-scroll no-scrollbar">
-          {displayItems?.length > 0 ? displayItems.map((item, index) => (
-            <PropertyCard key={index} item={item} />
-          )) : null}
+          {displayItems?.length > 0 ? displayItems.map((item, index) => {
+            const randomImage = images[Math.floor(Math.random() * images.length)];
+            return (
+              <PropertyCard key={index} name={item.name} neighbourhood={item.neighbourhood} price={item.price} host_name={item.host_name} image={randomImage} />
+            )
+          }) : <p className="m-5">This application may experience performance issues as it currently does not have a backend</p>}
         </div>
 
       }

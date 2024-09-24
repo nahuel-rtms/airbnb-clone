@@ -3,7 +3,7 @@ function ComingSoon() {
     <div className="w-full h-full flex items-center justify-center">
       <div>
         <p className="font-bold text-xl">
-          Esta seccion todavia se encuentra en desarrollo ...
+          This feature is still under development
         </p>
       </div>
     </div>

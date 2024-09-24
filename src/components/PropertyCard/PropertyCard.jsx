@@ -2,17 +2,17 @@ import { Link } from "react-router-dom";
 import PropertyCardImage from "./PropertyCardImage";
 import PropertyCardInfo from "./PropertyCardInfo";
 
-function PropertyCard( item ) {
+function PropertyCard({ name, neighbourhood, price, host_name, image }) {
   return (
     <Link
       to="./propertydetail"
       className="h-96 w-full bg-base-100 shadow-md rounded-md overflow-hidden"
     >
       <div className="w-full h-[60%]">
-        <PropertyCardImage />
+        <PropertyCardImage image={image}/>
       </div>
       <div className="w-full h-[40%]">
-        <PropertyCardInfo item={item} />
+        <PropertyCardInfo name={name} neighbourhood={neighbourhood} price={price} host_name={host_name} />
       </div>
     </Link>
   );

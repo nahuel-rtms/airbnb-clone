@@ -8,16 +8,13 @@ function NavBar() {
       </div>
       <div className="flex w-full h-max items-center justify-center space-x-20">
         <Link to="./" className="btn btn-ghost font-medium">
-          Inicio
-        </Link>
-        <Link to="./comingsoon" className="btn btn-ghost font-medium">
-          Inmobiliarias
+          Home
         </Link>
         <Link to="./properties" className="btn btn-ghost font-medium">
-          Ver propiedades
+          Properties
         </Link>
         <Link to="./comingsoon" className="btn btn-ghost font-medium">
-          Mis propiedades
+          My propierties
         </Link>
         <Link to="./comingsoon" className="btn btn-ghost font-medium">
           BInmbliria Blog

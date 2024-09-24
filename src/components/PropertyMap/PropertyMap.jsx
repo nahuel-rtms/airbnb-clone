@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import PropertyCard from "../PropertyCard/PropertyCard";
 import useDatasetStore from "../../stores/datasetStore";
 import LoadingSpinner from "../LoadingSpinner";
+import PopupCard from "../PopupCard/PopupCard";
 
 const center = [-34.60371, -58.38156];
 const zoom = 13;
@@ -17,7 +18,7 @@ function PropertyMap() {
   useMemo(() => {
     if (dataset) {
       const datasetLength = dataset.length;
-      const result = dataset.slice(0, datasetLength / 4);
+      const result = dataset.slice(0, datasetLength / 10);
       setSliced(result);
     }
   }, [dataset]);
@@ -33,7 +34,11 @@ function PropertyMap() {
       }}
     >
       <Popup>
-        <PropertyCard item={spot} />
+        {/* <PopupCard name={spot.name} neighbourhood={spot.neighbourhood} price={spot.price} host_name={spot.host_name} /> */}
+        <div className="w-full h-full flex flex-col items-center justify-center p-5">
+          <p className="text-lg font-thin">{spot.name}</p>
+          <p className="text-lg font-bold">$ {spot.price}</p>
+        </div>
       </Popup>
     </Marker>
   ));
