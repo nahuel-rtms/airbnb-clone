@@ -23,5 +23,8 @@ export default {
       })
     },
   ],
+  daisyui: {
+    themes: ["lemonade"], // Solo habilita el tema light
+  }
 }
 
