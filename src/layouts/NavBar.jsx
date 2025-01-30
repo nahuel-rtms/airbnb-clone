@@ -1,22 +1,31 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logo from "../assets/airbnb.png";
 
 function NavBar() {
   return (
     <div className="navbar bg-primary text-base-200">
-      <Link to="./" className="flex w-1/6 ">
-        <img src={logo} alt="logo" className="h-12"/>
-        <p className="text-2xl font-thin" >BA</p>
+      <Link to="./" className="flex items-center w-1/6 ">
+        <img src={logo} alt="logo" className="h-8 mx-3"/>
+        <p className="text-xl font-bold font-sans text-gray-950" >Airbnb Clone</p>
       </Link>
       <div className="flex w-4/6 h-max items-center justify-center space-x-14 ">
-        <Link to="./properties" className="btn btn-ghost font-medium">
-          Properties
+      <Link to="./" className="btn btn-ghost font-medium">
+          Home
         </Link>
-        <Link to="./comingsoon" className="btn btn-ghost font-medium">
-          Stats
+        <Link to="./properties" className="btn btn-ghost font-medium">
+          Split View
+        </Link>
+        <Link to="./toggle_view" className="btn btn-ghost font-medium">
+          Toggle View
         </Link>
         <Link to="./comingsoon" className="btn btn-ghost font-medium">
           Blog
+        </Link>
+        <Link to="./comingsoon" className="btn btn-ghost font-medium">
+          Real Estate Stats
+        </Link>
+        <Link to="./comingsoon" className="btn btn-ghost font-medium">
+          3D View
         </Link>
       </div>
       <div className="justify-end w-1/6 flex-none">

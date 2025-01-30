@@ -46,7 +46,7 @@ function PropertyMap() {
   ));
 
   return (
-    <div className="w-full h-full flex items-center justify-center">
+    <div className="w-full h-full flex items-center justify-center relative z-0">
       <MapContainer
         preferCanvas={true}
         center={center}
