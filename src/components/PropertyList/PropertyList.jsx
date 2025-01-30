@@ -50,7 +50,7 @@ function PropertyList() {
             return (
               <PropertyCard key={index} name={item.name} neighbourhood={item.neighbourhood} price={item.price} host_name={item.host_name} image={randomImage} />
             )
-          }) : <p className="m-5">This application may experience performance issues as it currently does not have a backend</p>}
+          }) : null }
         </div>
 
       }

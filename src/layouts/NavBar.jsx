@@ -1,26 +1,25 @@
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 function NavBar() {
   return (
-    <div className="navbar bg-base-200">
-      <div className="flex-1">
-        <a className="btn btn-disabled text-xl">BInmbliria</a>
-      </div>
-      <div className="flex w-full h-max items-center justify-center space-x-20">
-        <Link to="./" className="btn btn-ghost font-medium">
-          Home
-        </Link>
+    <div className="navbar bg-primary text-base-200">
+      <Link to="./" className="flex w-1/6 ">
+        <img src={logo} alt="logo" className="h-12"/>
+        <p className="text-2xl font-thin" >BA</p>
+      </Link>
+      <div className="flex w-4/6 h-max items-center justify-center space-x-14 ">
         <Link to="./properties" className="btn btn-ghost font-medium">
           Properties
         </Link>
         <Link to="./comingsoon" className="btn btn-ghost font-medium">
-          My propierties
+          Stats
         </Link>
         <Link to="./comingsoon" className="btn btn-ghost font-medium">
-          BInmbliria Blog
+          Blog
         </Link>
       </div>
-      <div className="flex-none">
+      <div className="justify-end w-1/6 flex-none">
         <button className="btn btn-square btn-ghost">
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -2,10 +2,10 @@ import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import MarkerClusterGroup from "react-leaflet-cluster";
 import MapFunctions from './MapFunctions';
 import { useMemo, useState } from "react";
-import PropertyCard from "../PropertyCard/PropertyCard";
 import useDatasetStore from "../../stores/datasetStore";
 import LoadingSpinner from "../LoadingSpinner";
-import PopupCard from "../PopupCard/PopupCard";
+import './Popup.css';
+import image from "../../assets/house.jpg"
 
 const center = [-34.60371, -58.38156];
 const zoom = 13;
@@ -33,11 +33,13 @@ function PropertyMap() {
         click: () => console.log(`Clicked on marker: ${spot.name} (${spot.latitude}, ${spot.longitude})`),
       }}
     >
-      <Popup>
-        {/* <PopupCard name={spot.name} neighbourhood={spot.neighbourhood} price={spot.price} host_name={spot.host_name} /> */}
-        <div className="w-full h-full flex flex-col items-center justify-center p-5">
-          <p className="text-lg font-thin">{spot.name}</p>
-          <p className="text-lg font-bold">$ {spot.price}</p>
+      <Popup className="custom-popup">
+        <div className="container">
+          <img src={image} alt="popup-image" width={"100%"}/>
+          <div className="content">
+            <p className="name">{spot.name}</p>
+            <p className="price">$ {spot.price}</p>
+          </div>
         </div>
       </Popup>
     </Marker>
