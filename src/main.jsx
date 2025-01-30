@@ -8,6 +8,7 @@ import Properties from "./views/Properties.jsx";
 import PropertyDetail from "./views/PropertyDetail.jsx";
 import ComingSoon from "./views/ComingSoon.jsx";
 import ToggleView from "./views/ToggleView.jsx";
+import BlogView from "./views/BlogView.jsx";
 
 
 const router = createBrowserRouter([
@@ -39,6 +40,11 @@ const router = createBrowserRouter([
       {
         path: "/toggle_view",
         element: <ToggleView />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/blog",
+        element: <BlogView />,
         errorElement: <ErrorPage />,
       },
     ],

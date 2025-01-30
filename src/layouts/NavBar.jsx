@@ -18,7 +18,7 @@ function NavBar() {
         <Link to="./toggle_view" className="btn btn-ghost font-medium">
           Toggle View
         </Link>
-        <Link to="./comingsoon" className="btn btn-ghost font-medium">
+        <Link to="./blog" className="btn btn-ghost font-medium">
           Blog
         </Link>
         <Link to="./comingsoon" className="btn btn-ghost font-medium">
