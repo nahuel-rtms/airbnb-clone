@@ -6,7 +6,8 @@ function NavBar() {
     <div className="navbar bg-primary text-base-200">
       <Link to="./" className="flex items-center w-1/6 ">
         <img src={logo} alt="logo" className="h-8 mx-3"/>
-        <p className="text-xl font-bold font-sans text-gray-950" >Airbnb Clone</p>
+        <p className="text-xl font-bold font-sans text-gray-950" >Airbnb</p>
+        <p className="text-xl font-bold font-sans text-gray-950 line-through" >Clone</p>
       </Link>
       <div className="flex w-4/6 h-max items-center justify-center space-x-14 ">
       <Link to="./" className="btn btn-ghost font-medium">
