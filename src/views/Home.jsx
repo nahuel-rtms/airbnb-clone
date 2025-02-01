@@ -1,4 +1,4 @@
-import FeaturedBlogPost from "../components/BlogPost/BlogPostContainer";
+import FeaturedBlogPost from "../components/Blog/BlogPostContainer";
 import FeaturedProperties from "../components/FeaturedProperties/FeaturedProperties";
 import Hero from "../components/Hero/Hero";
 import Footer from "../layouts/Footer";

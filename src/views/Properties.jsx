@@ -6,7 +6,7 @@ import PropertiesFilter from "../components/PropertiesFilter";
 
 function Properties() {
 
-const Map = lazy(() => import("../components/PropertyMap/PropertyMap"))
+const Map = lazy(() => import("../components/Map/Map"))
 
   return (
     <div className="w-full h-full">

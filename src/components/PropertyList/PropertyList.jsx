@@ -12,7 +12,7 @@ import img6 from "../../assets/propertyImages/image6.jpg"
 
 const images = [img1, img2, img3, img4, img5, img6]
 
-function PropertyList() {
+function PropertyList(columns) {
 
   const { list } = useListingStore()
   const { isLoading, error } = useDatasetStore()
@@ -44,7 +44,7 @@ function PropertyList() {
           
           <LoadingSpinner />
         </div> :
-        <div className="w-full h-[85%] grid grid-cols-2 gap-2 p-5 overflow-scroll no-scrollbar">
+        <div className="w-full h-[85%] grid grid-cols-2 xl:grid-cols-3 gap-2  p-5 overflow-scroll no-scrollbar">
           {displayItems?.length > 0 ? displayItems.map((item, index) => {
             const randomImage = images[Math.floor(Math.random() * images.length)];
             return (

@@ -1,5 +1,5 @@
-import BlogPost from "../components/BlogPost/BlogPost";
-import BlogPostContainer from "../components/BlogPost/BlogPostContainer";
+import BlogPost from "../components/Blog/BlogPost";
+import BlogPostContainer from "../components/Blog/BlogPostContainer";
 
 function BlogView () {
     return (

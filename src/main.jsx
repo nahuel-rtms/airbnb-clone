@@ -9,6 +9,7 @@ import PropertyDetail from "./views/PropertyDetail.jsx";
 import ComingSoon from "./views/ComingSoon.jsx";
 import ToggleView from "./views/ToggleView.jsx";
 import BlogView from "./views/BlogView.jsx";
+import ThreeDView from "./views/ThreeDView.jsx";
 
 
 const router = createBrowserRouter([
@@ -45,6 +46,11 @@ const router = createBrowserRouter([
       {
         path: "/blog",
         element: <BlogView />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/3d_view",
+        element: <ThreeDView />,
         errorElement: <ErrorPage />,
       },
     ],

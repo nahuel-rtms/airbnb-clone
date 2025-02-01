@@ -25,11 +25,12 @@ function NavBar() {
         <Link to="./comingsoon" className="btn btn-ghost font-medium">
           Real Estate Stats
         </Link>
-        <Link to="./comingsoon" className="btn btn-ghost font-medium">
+        <Link to="./3d_view" className="btn btn-ghost font-medium">
           3D View
         </Link>
       </div>
       <div className="justify-end w-1/6 flex-none">
+      
         <button className="btn btn-square btn-ghost">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -45,6 +46,7 @@ function NavBar() {
             ></path>
           </svg>
         </button>
+        
       </div>
     </div>
   );
