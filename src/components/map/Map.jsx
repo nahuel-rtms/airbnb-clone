@@ -5,12 +5,12 @@ import { useMemo, useState } from "react";
 import useDatasetStore from "../../stores/datasetStore";
 import LoadingSpinner from "../LoadingSpinner";
 import './Popup.css';
-import image from "../../assets/house.jpg"
+import image from "../../assets/propertyImg/image1.jpg";
 
 const center = [-34.60371, -58.38156];
 const zoom = 13;
 
-function PropertyMap() {
+function Map() {
   const { dataset, isLoading } = useDatasetStore();
   const [sliced, setSliced] = useState([]); // Mueve el useState fuera del useMemo
 
@@ -68,4 +68,4 @@ function PropertyMap() {
   );
 }
 
-export default PropertyMap;
+export default Map;

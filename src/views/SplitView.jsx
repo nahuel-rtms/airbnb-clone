@@ -1,16 +1,16 @@
 import { lazy, Suspense } from "react";
-import PropertyList from "../components/PropertyList/PropertyList";
+import ListingContainer from "../components/Listing/ListingContainer";
+import ListingFilter from "../components/listing/ListingFilter";
 import LoadingSpinner from "../components/LoadingSpinner";
-import PropertiesFilter from "../components/PropertiesFilter";
 
 
-function Properties() {
+function SplitView() {
 
-const Map = lazy(() => import("../components/PropertyMap/PropertyMap"))
+const Map = lazy(() => import("../components/map/Map"))
 
   return (
     <div className="w-full h-full">
-      <PropertiesFilter />
+      <ListingFilter />
       <div className="w-full h-[90%] flex">
         <div className="h-full w-[52%] bg-base-200">
           <Suspense fallback={<LoadingSpinner /> }>
@@ -18,11 +18,11 @@ const Map = lazy(() => import("../components/PropertyMap/PropertyMap"))
           </Suspense>
         </div>
         <div className="h-full w-[48%]">
-          <PropertyList />
+          <ListingContainer />
         </div>
       </div>
     </div>
   );
 }
 
-export default Properties;
+export default SplitView;

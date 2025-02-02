@@ -1,6 +1,6 @@
-import FeaturedBlogPost from "../components/BlogPost/BlogPostContainer";
-import FeaturedProperties from "../components/FeaturedProperties/FeaturedProperties";
-import Hero from "../components/Hero/Hero";
+import FeaturedProperties from "../components/homeComponents/FeaturedProperties";
+import Hero from "../components/homeComponents/Hero/Hero";
+import BlogContainer from "../components/blog/BlogContainer";
 import Footer from "../layouts/Footer";
 
 
@@ -12,7 +12,7 @@ function Home() {
           <Hero />
         </div>
         <FeaturedProperties />
-        <FeaturedBlogPost />
+        <BlogContainer />
       </div>
       <Footer />
     </div>

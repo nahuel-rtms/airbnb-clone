@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import PropertyCardImage from "./PropertyCardImage";
-import PropertyCardInfo from "./PropertyCardInfo";
+import PropertyCardImage from "./ListingCardImage";
+import PropertyCardInfo from "./ListingCardInfo";
 
-function PropertyCard({ name, neighbourhood, price, host_name, image }) {
+function ListingCard({ name, neighbourhood, price, host_name, image }) {
   return (
     <Link
       to="./propertydetail"
@@ -18,4 +18,4 @@ function PropertyCard({ name, neighbourhood, price, host_name, image }) {
   );
 }
 
-export default PropertyCard;
+export default ListingCard;

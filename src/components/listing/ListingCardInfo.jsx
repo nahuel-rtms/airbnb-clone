@@ -1,6 +1,6 @@
 import { Bathtub, Bed, Cube } from "@phosphor-icons/react";
 
-function PropertyCardInfo({ name, neighbourhood, price, host_name }) {
+function ListingCardInfo({ name, neighbourhood, price, host_name }) {
 
   return (
     <div className="w-full h-full p-3">
@@ -32,4 +32,4 @@ function PropertyCardInfo({ name, neighbourhood, price, host_name }) {
   );
 }
 
-export default PropertyCardInfo;
+export default ListingCardInfo;

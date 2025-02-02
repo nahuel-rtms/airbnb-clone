@@ -1,4 +1,4 @@
-function PropertiesFilter() {
+function ListingFilter() {
     return (
         <div className="flex h-[10%] w-full space-x-5 bg-base-100 items-center px-10">
             <input
@@ -29,4 +29,4 @@ function PropertiesFilter() {
     )
 }
 
-export default PropertiesFilter;
+export default ListingFilter;

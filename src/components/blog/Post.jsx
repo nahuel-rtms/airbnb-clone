@@ -1,6 +1,6 @@
-import postimg from "../../assets/blog.jpg";
+import postimg from "../../assets/blogImg/blog.jpg";
 
-function BlogPost({ title, content }) {
+function Post({ title, content }) {
 
   console.log(title, content)
   return (
@@ -20,4 +20,4 @@ function BlogPost({ title, content }) {
   );
 }
 
-export default BlogPost;
+export default Post;

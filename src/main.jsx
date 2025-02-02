@@ -1,51 +1,51 @@
-import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
-import "./index.css";
+import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./views/Home.jsx";
-import ErrorPage from "./views/ErrorPage.jsx";
-import Properties from "./views/Properties.jsx";
-import PropertyDetail from "./views/PropertyDetail.jsx";
+import "./index.css";
 import ComingSoon from "./views/ComingSoon.jsx";
+import DetailView from "./views/DetailView.jsx";
 import ToggleView from "./views/ToggleView.jsx";
+import ErrorView from "./views/ErrorView.jsx";
+import SplitView from "./views/SplitView.jsx";
 import BlogView from "./views/BlogView.jsx";
+import Home from "./views/Home.jsx";
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <ErrorPage />,
+    errorElement: <ErrorView />,
     children: [
       {
         path: "/",
         element: <Home />,
-        errorElement: <ErrorPage />,
+        errorElement: <ErrorView />,
       },
       {
         path: "/properties",
-        element: <Properties />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/propertydetail",
-        element: <PropertyDetail />,
-        errorElement: <ErrorPage />,
-      },
-      {
-        path: "/comingsoon",
-        element: <ComingSoon />,
-        errorElement: <ErrorPage />,
+        element: <SplitView />,
+        errorElement: <ErrorView />,
       },
       {
         path: "/toggle_view",
         element: <ToggleView />,
-        errorElement: <ErrorPage />,
+        errorElement: <ErrorView />,
       },
       {
         path: "/blog",
         element: <BlogView />,
-        errorElement: <ErrorPage />,
+        errorElement: <ErrorView />,
+      },
+      {
+        path: "/propertydetail",
+        element: <DetailView />,
+        errorElement: <ErrorView />,
+      },
+      {
+        path: "/comingsoon",
+        element: <ComingSoon />,
+        errorElement: <ErrorView />,
       },
     ],
   },

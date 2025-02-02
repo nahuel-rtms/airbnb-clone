@@ -1,6 +1,6 @@
 import NavBar from "../layouts/NavBar";
 
-function ErrorPage() {
+function ErrorView() {
   return (
     <div className="h-screen w-screen">
       <NavBar />
@@ -15,4 +15,4 @@ function ErrorPage() {
   );
 }
 
-export default ErrorPage;
+export default ErrorView;

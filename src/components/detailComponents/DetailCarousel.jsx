@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function PropertyImages() {
+function DetailCarousel() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -75,4 +75,4 @@ function PropertyImages() {
   );
 }
 
-export default PropertyImages;
+export default DetailCarousel;

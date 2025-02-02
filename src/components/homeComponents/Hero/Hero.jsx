@@ -1,6 +1,5 @@
-import React, { useState } from "react";
 import Stats from "./Stats";
-import heroimg from "../../assets/hero.jpg";
+import heroimg from "../../../assets/heroImg/hero.jpg";
 
 function Hero() {
 

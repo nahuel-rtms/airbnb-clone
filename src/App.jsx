@@ -1,9 +1,11 @@
 import { Outlet } from "react-router-dom";
-import useDatasetStore from "./stores/datasetStore";
 import { StrictMode, useEffect } from "react";
+import useDatasetStore from "./stores/datasetStore";
 import NavBar from "./layouts/NavBar";
 
+
 function App() {
+
   const { fetchDataset } = useDatasetStore();
 
   useEffect(() => {

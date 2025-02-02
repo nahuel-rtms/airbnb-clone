@@ -1,12 +1,12 @@
-import BlogPost from "./BlogPost";
+import BlogPost from "./Post";
 import posts from "./posts.json"
 
-function BlogPostContainer() {
+function BlogContainer() {
 
   console.log(posts)
 
   return (
-    <div className="w-full h-fit flex flex-col items-center">
+    <div className="w-full h-max flex flex-col items-center">
       <p className="m-5 font-bold text-xl">
         Latest Insights from Our Real Estate Blog
       </p>
@@ -19,4 +19,4 @@ function BlogPostContainer() {
   );
 }
 
-export default BlogPostContainer;
+export default BlogContainer;

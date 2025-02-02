@@ -1,4 +1,4 @@
-function PropertyCardImage(image) {
+function ListingCardImage(image) {
   return (
     <div className="relative overflow-hidden h-full">
       <svg
@@ -24,4 +24,4 @@ function PropertyCardImage(image) {
   );
 }
 
-export default PropertyCardImage;
+export default ListingCardImage;

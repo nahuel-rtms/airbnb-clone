@@ -1,6 +1,6 @@
 import { Bathtub, Campfire, PawPrint, Wheelchair } from "@phosphor-icons/react";
 
-function PropertyDescription() {
+function DetailDescription() {
   return (
     <div className="flex-1 space-y-32 pb-48 pr-2">
       <div className="flex flex-col">
@@ -61,4 +61,4 @@ function PropertyDescription() {
   );
 }
 
-export default PropertyDescription;
+export default DetailDescription;
